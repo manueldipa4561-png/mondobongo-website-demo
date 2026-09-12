@@ -4,6 +4,12 @@ mobileStylesheet.href = 'mobile.css';
 mobileStylesheet.media = '(max-width: 920px)';
 document.head.appendChild(mobileStylesheet);
 
+const mobileMenuStylesheet = document.createElement('link');
+mobileMenuStylesheet.rel = 'stylesheet';
+mobileMenuStylesheet.href = 'mobile-menu.css';
+mobileMenuStylesheet.media = '(max-width: 820px)';
+document.head.appendChild(mobileMenuStylesheet);
+
 const header = document.querySelector('.site-header');
 const menuToggle = document.querySelector('.menu-toggle');
 const nav = document.querySelector('.nav');
@@ -60,7 +66,9 @@ tabs.forEach((tab) => {
     });
 
     if (window.innerWidth <= 820) {
-      tab.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+      requestAnimationFrame(() => {
+        tab.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+      });
     }
   });
 });
