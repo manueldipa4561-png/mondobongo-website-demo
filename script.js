@@ -1,10 +1,22 @@
+const mobileStylesheet = document.createElement('link');
+mobileStylesheet.rel = 'stylesheet';
+mobileStylesheet.href = 'mobile.css';
+mobileStylesheet.media = '(max-width: 920px)';
+document.head.appendChild(mobileStylesheet);
+
 const header = document.querySelector('.site-header');
 const menuToggle = document.querySelector('.menu-toggle');
 const nav = document.querySelector('.nav');
 
+const closeMobileNav = () => {
+  nav?.classList.remove('open');
+  menuToggle?.setAttribute('aria-expanded', 'false');
+  document.body.style.overflow = '';
+};
+
 window.addEventListener('scroll', () => {
-  header.classList.toggle('scrolled', window.scrollY > 24);
-});
+  header?.classList.toggle('scrolled', window.scrollY > 24);
+}, { passive: true });
 
 menuToggle?.addEventListener('click', () => {
   const isOpen = nav.classList.toggle('open');
@@ -13,12 +25,21 @@ menuToggle?.addEventListener('click', () => {
 });
 
 nav?.querySelectorAll('a').forEach((link) => {
-  link.addEventListener('click', () => {
-    nav.classList.remove('open');
-    menuToggle?.setAttribute('aria-expanded', 'false');
-    document.body.style.overflow = '';
-  });
+  link.addEventListener('click', closeMobileNav);
 });
+
+document.addEventListener('keydown', (event) => {
+  if (event.key === 'Escape' && nav?.classList.contains('open')) {
+    closeMobileNav();
+    menuToggle?.focus();
+  }
+});
+
+window.addEventListener('resize', () => {
+  if (window.innerWidth > 820 && nav?.classList.contains('open')) {
+    closeMobileNav();
+  }
+}, { passive: true });
 
 const tabs = [...document.querySelectorAll('.menu-tab')];
 const panels = [...document.querySelectorAll('.menu-panel')];
@@ -31,11 +52,16 @@ tabs.forEach((tab) => {
       const active = item === tab;
       item.classList.toggle('active', active);
       item.setAttribute('aria-selected', String(active));
+      item.setAttribute('tabindex', active ? '0' : '-1');
     });
 
     panels.forEach((panel) => {
       panel.classList.toggle('active', panel.dataset.panel === target);
     });
+
+    if (window.innerWidth <= 820) {
+      tab.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+    }
   });
 });
 
