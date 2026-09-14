@@ -1,7 +1,8 @@
 document.documentElement.classList.add('js');
 const toggle=document.querySelector('.menu-toggle'),nav=document.querySelector('.nav');
-function closeMenu(){nav.classList.remove('open');toggle.setAttribute('aria-expanded','false')}
-toggle.addEventListener('click',()=>{const open=nav.classList.toggle('open');toggle.setAttribute('aria-expanded',String(open));if(open)nav.querySelector('a').focus()});
+function closeMenu(){nav.classList.remove('open');toggle.setAttribute('aria-expanded','false');toggle.setAttribute('aria-label','Apri menu');document.body.style.overflow=''}
+toggle.addEventListener('click',()=>{const open=nav.classList.toggle('open');toggle.setAttribute('aria-expanded',String(open));toggle.setAttribute('aria-label',open?'Chiudi menu':'Apri menu');document.body.style.overflow=open?'hidden':'';if(open)nav.querySelector('a').focus()});
+nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',closeMenu));
 document.addEventListener('keydown',e=>{if(e.key==='Escape'&&nav.classList.contains('open')){closeMenu();toggle.focus()}});
 window.addEventListener('resize',()=>{if(innerWidth>820)closeMenu()});
 const tabs=[...document.querySelectorAll('.menu-tab')],panels=[...document.querySelectorAll('.menu-panel')];
