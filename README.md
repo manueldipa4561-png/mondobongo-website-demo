@@ -37,3 +37,7 @@ The current photographs are free Unsplash atmosphere images used only for this w
 ## Stack
 
 Static HTML, CSS and vanilla JavaScript. No build command is required, so the project can be deployed directly through Netlify or GitHub Pages.
+
+
+## Versione pacchetto
+La configurazione attuale è descritta in [DEMO_SCOPE.md](DEMO_SCOPE.md). Questa specifica prevale sull’elenco iniziale delle funzionalità sopra riportato.
