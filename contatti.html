@@ -11,17 +11,26 @@
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&amp;family=Playfair+Display:ital,wght@0,500;0,600;1,500&amp;display=swap" rel="stylesheet"/>
 <link href="styles.css" rel="stylesheet"/>
-<link href="package.css" rel="stylesheet"/><meta content="noindex, follow" name="robots"/><link href="https://mondobongo-website-demo.netlify.app/contatti.html" rel="canonical"/></head>
+<link href="package.css" rel="stylesheet"/>
+<meta content="noindex, follow" name="robots"/>
+<link href="https://mondobongo-website-demo.netlify.app/contatti.html" rel="canonical"/>
+</head>
 <body>
 <header class="site-header" id="top">
 <a aria-label="Mondo Bongo home" class="brand" href="index.html">
 <span class="brand-mark">MB</span>
 <span class="brand-name">Mondo Bongo</span>
 </a>
-<button aria-controls="site-nav" aria-expanded="false" aria-label="Apri menu" class="menu-toggle"><span></span><span></span></button>
+<button aria-controls="site-nav" aria-expanded="false" aria-label="Apri menu" class="menu-toggle" type="button"><span></span><span></span></button>
 <nav aria-label="Navigazione principale" class="nav" id="site-nav"><a href="index.html">Il ristorante</a><a href="menu.html">Menu</a><a aria-current="page" href="contatti.html">Contatti e richieste</a></nav>
 </header>
-<main><section class="page-heading section"><p class="eyebrow">MONDO BONGO · FRANCAVILLA</p><h1 class="display">La tua prossima<br/><em>serata qui.</em></h1><p>Contatti diretti e una richiesta semplice, da confermare con il ristorante.</p></section><section class="contact" id="contatti">
+<main>
+<section class="page-heading section">
+<p class="eyebrow">MONDO BONGO · FRANCAVILLA</p>
+<h1 class="display">La tua prossima<br/><em>serata qui.</em></h1>
+<p>Contatti diretti e una richiesta semplice, da confermare con il ristorante.</p>
+</section>
+<section class="contact" id="contatti">
 <div class="contact-inner">
 <p class="eyebrow">Prenotazioni</p>
 <h2 class="display light">Una tavola,<br/>una pizza,<br/>una sera d'Abruzzo.</h2>
@@ -35,12 +44,37 @@
 <div><small>Social</small><p><a href="https://www.instagram.com/mondobongo_francavilla/" rel="noopener" target="_blank">Instagram ↗</a><br/><a href="https://www.facebook.com/mondobongofrancavilla" rel="noopener" target="_blank">Facebook ↗</a></p></div>
 </div>
 </div>
-</section><section class="request-section section"><div><p class="eyebrow">UNA RICHIESTA, NESSUN AUTOMATISMO</p><h2 class="display">Prepariamo<br/><em>il messaggio.</em></h2><p>Scegli giorno, orario e numero di persone. Potrai modificare il testo e inviarlo su WhatsApp. La disponibilità va confermata dal ristorante.</p><p>Questa demo non registra dati e non conferma prenotazioni.</p></div><form id="request-form"><label>Giorno<input id="visit-date" required="" type="date"/></label><label>Orario<input id="visit-time" required="" type="time"/></label><label>Persone<select id="party-size"><option>2</option><option>1</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option></select></label><button class="button button-light" type="submit">Prepara richiesta WhatsApp</button><p id="request-error" role="alert"></p><div hidden="" id="request-result"><p aria-live="polite" id="request-preview"></p><a class="button button-light" id="request-link" rel="noreferrer" target="_blank">Apri WhatsApp con il testo</a><a class="text-link dark-link" download="promemoria-richiesta.ics" id="calendar-link">Scarica promemoria da confermare</a></div><noscript>Per concordare un tavolo chiama il <a href="tel:+393289499016">328 949 9016</a>.</noscript></form></section></main>
+</section>
+<section class="request-section section">
+<div>
+<p class="eyebrow">UNA RICHIESTA, NESSUN AUTOMATISMO</p>
+<h2 class="display">Prepariamo<br/><em>il messaggio.</em></h2>
+<p>Scegli giorno, orario e numero di persone. Potrai modificare il testo e inviarlo su WhatsApp. La disponibilità va confermata dal ristorante.</p>
+<p>Questa demo non registra dati e non conferma prenotazioni.</p>
+</div>
+<form id="request-form">
+<label>Giorno<input id="visit-date" required="" type="date"/></label>
+<label>Orario<input id="visit-time" required="" type="time"/></label>
+<label>Persone<select id="party-size"><option>2</option><option>1</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option></select></label>
+<button class="button button-light" type="submit">Prepara richiesta WhatsApp</button>
+<p id="request-error" role="alert"></p>
+<div hidden="" id="request-result">
+<p aria-live="polite" id="request-preview"></p>
+<a class="button button-light" id="request-link" rel="noreferrer" target="_blank">Apri WhatsApp con il testo</a>
+<a class="text-link dark-link" id="google-calendar-link" rel="noreferrer" target="_blank">Aggiungi promemoria a Google Calendar ↗</a>
+<a class="text-link dark-link" download="promemoria-richiesta.ics" id="calendar-link">Scarica promemoria .ics</a>
+<small>Calendario e file .ics sono solo promemoria personali: non confermano il tavolo.</small>
+</div>
+<noscript>Per concordare un tavolo chiama il <a href="tel:+393289499016">328 949 9016</a>.</noscript>
+</form>
+</section>
+</main>
 <footer class="footer">
 <a class="brand footer-brand" href="index.html"><span class="brand-mark">MB</span><span class="brand-name">Mondo Bongo</span></a>
 <p>Pizza · Cucina Abruzzese · Arrosticini · Brace</p>
 <p class="concept-note">Concept website · immagini di atmosfera da Unsplash, da sostituire con asset ufficiali del locale.</p>
-<p>Progetto dimostrativo — non commissionato.</p></footer>
+<p>Progetto dimostrativo — non commissionato.</p>
+</footer>
 <script src="growth.js"></script>
 </body>
 </html>
