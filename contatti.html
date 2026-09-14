@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="it">
 <head>
 <meta charset="utf-8"/>
@@ -17,53 +16,51 @@
 </head>
 <body>
 <header class="site-header" id="top">
-<a aria-label="Mondo Bongo home" class="brand" href="index.html">
-<span class="brand-mark">MB</span>
-<span class="brand-name">Mondo Bongo</span>
-</a>
+<a aria-label="Mondo Bongo home" class="brand" href="index.html"><span class="brand-mark">MB</span><span class="brand-name">Mondo Bongo</span></a>
 <button aria-controls="site-nav" aria-expanded="false" aria-label="Apri menu" class="menu-toggle" type="button"><span></span><span></span></button>
 <nav aria-label="Navigazione principale" class="nav" id="site-nav"><a href="index.html">Il ristorante</a><a href="menu.html">Menu</a><a aria-current="page" href="contatti.html">Contatti e richieste</a></nav>
 </header>
 <main>
 <section class="page-heading section">
-<p class="eyebrow">MONDO BONGO · FRANCAVILLA</p>
+<p class="eyebrow">Mondo Bongo · Francavilla al Mare</p>
 <h1 class="display">La tua prossima<br/><em>serata qui.</em></h1>
-<p>Contatti diretti e una richiesta semplice, da confermare con il ristorante.</p>
+<p>Contatti diretti, indicazioni e una richiesta semplice da inviare al ristorante.</p>
 </section>
 <section class="contact" id="contatti">
 <div class="contact-inner">
-<p class="eyebrow">Prenotazioni</p>
+<p class="eyebrow">Contatti diretti</p>
 <h2 class="display light">Una tavola,<br/>una pizza,<br/>una sera d'Abruzzo.</h2>
 <div class="contact-actions">
-<a class="button button-light" href="tel:+393289499016">+39 328 949 9016</a>
-<a class="text-link" href="tel:+39085815159">085 815159 <span>↗</span></a>
+<a class="button button-light" href="tel:+393289499016">Chiama · +39 328 949 9016</a>
+<a class="text-link" href="https://wa.me/393289499016" rel="noreferrer" target="_blank">WhatsApp <span>↗</span></a>
+<a class="text-link" href="https://www.google.com/maps/search/?api=1&amp;query=Via+Nazionale+Adriatica+Sud+107+Francavilla+al+Mare" rel="noreferrer" target="_blank">Indicazioni <span>↗</span></a>
 </div>
 <div class="contact-meta">
 <div><small>Dove</small><p>Via Nazionale Adriatica Sud, 107<br/>66023 Francavilla al Mare (CH)</p></div>
-<div><small>Orario indicativo</small><p>Cena · 19:00–01:00<br/><span>Verificare eventuali variazioni</span></p></div>
+<div><small>Telefono fisso</small><p><a href="tel:+39085815159">085 815159</a></p></div>
 <div><small>Social</small><p><a href="https://www.instagram.com/mondobongo_francavilla/" rel="noopener" target="_blank">Instagram ↗</a><br/><a href="https://www.facebook.com/mondobongofrancavilla" rel="noopener" target="_blank">Facebook ↗</a></p></div>
 </div>
 </div>
 </section>
-<section class="request-section section">
-<div>
-<p class="eyebrow">UNA RICHIESTA, NESSUN AUTOMATISMO</p>
-<h2 class="display">Prepariamo<br/><em>il messaggio.</em></h2>
-<p>Scegli giorno, orario e numero di persone. Potrai modificare il testo e inviarlo su WhatsApp. La disponibilità va confermata dal ristorante.</p>
-<p>Questa demo non registra dati e non conferma prenotazioni.</p>
+<section class="request-section section" id="richiesta" aria-labelledby="request-title">
+<div class="request-copy">
+<p class="eyebrow">RICHIESTA DA CONFERMARE</p>
+<h2 class="display" id="request-title">Prepariamo<br/><em>il messaggio.</em></h2>
+<p>Scegli giorno, orario e numero di persone. Il messaggio si prepara qui, poi sei tu ad aprire WhatsApp e inviarlo.</p>
+<div class="request-disclosure"><strong>Non è una prenotazione automatica.</strong><span>La disponibilità deve essere confermata dal ristorante. Calendario e file .ics sono solo promemoria personali.</span></div>
 </div>
-<form id="request-form">
-<label>Giorno<input id="visit-date" required="" type="date"/></label>
-<label>Orario<input id="visit-time" required="" type="time"/></label>
-<label>Persone<select id="party-size"><option>2</option><option>1</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option></select></label>
-<button class="button button-light" type="submit">Prepara richiesta WhatsApp</button>
+<form id="request-form" novalidate>
+<label for="visit-date">Giorno<input id="visit-date" required type="date"/></label>
+<label for="visit-time">Orario<input id="visit-time" required type="time"/></label>
+<label for="party-size">Persone<select id="party-size"><option>2</option><option>1</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option></select></label>
+<button class="button request-submit" type="submit">Prepara richiesta WhatsApp</button>
 <p id="request-error" role="alert"></p>
-<div hidden="" id="request-result">
-<p aria-live="polite" id="request-preview"></p>
-<a class="button button-light" id="request-link" rel="noreferrer" target="_blank">Apri WhatsApp con il testo</a>
-<a class="text-link dark-link" id="google-calendar-link" rel="noreferrer" target="_blank">Aggiungi promemoria a Google Calendar ↗</a>
-<a class="text-link dark-link" download="promemoria-richiesta.ics" id="calendar-link">Scarica promemoria .ics</a>
-<small>Calendario e file .ics sono solo promemoria personali: non confermano il tavolo.</small>
+<div hidden id="request-result" aria-live="polite">
+<p class="request-ready"><strong>Richiesta pronta · DA CONFERMARE</strong><span>Controlla il testo prima di inviarlo.</span></p>
+<p id="request-preview"></p>
+<a class="button request-primary" id="request-link" rel="noreferrer" target="_blank">Apri WhatsApp con il testo</a>
+<div class="calendar-actions"><a class="text-link dark-link" id="google-calendar-link" rel="noreferrer" target="_blank">Aggiungi promemoria a Google Calendar ↗</a><a class="text-link dark-link" download="promemoria-richiesta.ics" id="calendar-link">Scarica promemoria .ics</a></div>
+<small>Google Calendar e il file .ics non confermano il tavolo: l'evento resta una richiesta personale con stato TENTATIVE.</small>
 </div>
 <noscript>Per concordare un tavolo chiama il <a href="tel:+393289499016">328 949 9016</a>.</noscript>
 </form>
