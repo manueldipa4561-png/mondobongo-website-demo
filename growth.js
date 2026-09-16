@@ -1,7 +1,18 @@
 document.documentElement.classList.add('js');
 
+const header=document.querySelector('.site-header');
 const toggle=document.querySelector('.menu-toggle');
 const nav=document.querySelector('.nav');
+
+function syncHeader(){
+  if(!header)return;
+  header.classList.toggle('scrolled',window.scrollY>28);
+}
+
+if(header){
+  syncHeader();
+  window.addEventListener('scroll',syncHeader,{passive:true});
+}
 
 function closeMenu(){
   if(!toggle||!nav)return;
