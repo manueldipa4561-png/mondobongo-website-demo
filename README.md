@@ -32,12 +32,17 @@ Menu names, ingredients and prices used in the demo were taken from the Mondo Bo
 
 ## Images
 
-The current photographs are free Unsplash atmosphere images used only for this website concept. They should be replaced with approved official Mondo Bongo photography before using the site as a final production website.
+The demo uses free Unsplash atmosphere photography plus one art-directed AI atmosphere asset in the homepage hero. The AI asset was generated specifically for this concept and is not presented as authentic Mondo Bongo photography. All demo imagery should be replaced with approved official restaurant photography before production use.
+
+## Crescita visual system
+
+The September 2026 Crescita refinement is implemented as an additive `crescita-v2.css` layer over the existing static architecture. It upgrades hierarchy, navigation, menu browsing, responsive composition, contact/request presentation, focus states and reduced-motion behavior without changing the package's functional boundaries.
+
+The existing request flow remains client-side only: it prepares a WhatsApp message and optional personal calendar reminders. It does not confirm a reservation, store data, or provide a shared booking backend.
 
 ## Stack
 
 Static HTML, CSS and vanilla JavaScript. No build command is required, so the project can be deployed directly through Netlify or GitHub Pages.
-
 
 ## Versione pacchetto
 La configurazione attuale è descritta in [DEMO_SCOPE.md](DEMO_SCOPE.md). Questa specifica prevale sull’elenco iniziale delle funzionalità sopra riportato.
